@@ -9,6 +9,12 @@ class Blog(models.Model):
     body = models.TextField()
     image = models.ImageField(upload_to='images/')
 
+    def __str__(self):
+        return self.title
+
+    def summary(self):
+        return self.body[:100]
+
 # Add the blog app to the settings
 
 #create sa migration
